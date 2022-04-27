@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.1">
+  <object class="ttk.Frame" id="frame1">
+    <property name="height">720</property>
+    <property name="relief">raised</property>
+    <property name="takefocus">true</property>
+    <property name="width">1080</property>
+    <layout manager="grid">
+      <property name="column">0</property>
+      <property name="propagate">True</property>
+      <property name="row">0</property>
+    </layout>
+    <child>
+      <object class="tk.Canvas" id="Video_Canvas">
+        <property name="height">720</property>
+        <property name="relief">flat</property>
+        <property name="width">1080</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="columnspan">5</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+          <property name="rowspan">20</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="affect_button1">
+        <property name="command" type="command" cbtype="simple">affectButton1Pressed</property>
+        <property name="text" translatable="yes">Affect 1</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">19</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="affect_button2">
+        <property name="command" type="command" cbtype="simple">affectButton2Pressed</property>
+        <property name="text" translatable="yes">Affect 2</property>
+        <layout manager="grid">
+          <property name="column">1</property>
+          <property name="propagate">True</property>
+          <property name="row">19</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="affect_button3">
+        <property name="command" type="command" cbtype="simple">affectButton3Pressed</property>
+        <property name="text" translatable="yes">Affect 3</property>
+        <layout manager="grid">
+          <property name="column">2</property>
+          <property name="propagate">True</property>
+          <property name="row">19</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="affect_button4">
+        <property name="command" type="command" cbtype="simple">affectButton4Pressed</property>
+        <property name="text" translatable="yes">Affect 4</property>
+        <layout manager="grid">
+          <property name="column">3</property>
+          <property name="propagate">True</property>
+          <property name="row">19</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="affect_button5">
+        <property name="command" type="command" cbtype="simple">affectButton5Pressed</property>
+        <property name="text" translatable="yes">Affect 5</property>
+        <layout manager="grid">
+          <property name="column">4</property>
+          <property name="propagate">True</property>
+          <property name="row">19</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="on_off_button">
+        <property name="command" type="command" cbtype="simple">onOffPressed</property>
+        <property name="text" translatable="yes">ON / OFF</property>
+        <layout manager="grid">
+          <property name="column">4</property>
+          <property name="propagate">True</property>
+          <property name="row">2</property>
+        </layout>
+      </object>
+    </child>
+  </object>
+</interface>

@@ -4,6 +4,10 @@ Video feed filters
 Description:
 Using Imageio and five button to apply a different affect with each button.
 
+pictureaffectapp.py added to create the state machine required for the button interactions, 
+each button show a different image, using a different image various PIL image affects.
+Five random images included.
+
 How to Install and Run the Project:
 Pull repo into a folder then call with python using
 

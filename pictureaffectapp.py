@@ -1,12 +1,9 @@
 # Phil Minard
 # With help from Sam Cork
+# With help from Ben
 # encoding: utf8
 from __future__ import unicode_literals
-# import tkinter as tk
-# import tkinter.ttk as ttk
 from PIL import Image, ImageTk, ImageFilter  # ,ImageFilter
-# import numpy as np
-# from time import sleep
 import sys
 import os
 import pygubu
@@ -22,14 +19,15 @@ except:
 sys.path.append(os.path.join(os.path.dirname(__file__), '../'))
 
 
-class Pictureaffectapp:
+class pictureaffectapp:
     """Main doc string"""
-    def __init__(self, master):
-        self.master = master
+    def __init__(self):
+        # self.master = master
+        self.master = tk.Tk()  # Add extra window
         self.builder = builder = pygubu.Builder()
         fpath = os.path.join(os.path.dirname(__file__), "Video_Affect_App.ui")
         builder.add_from_file(fpath)
-        mainwindow = builder.get_object('mainwindow', master)
+        mainwindow = builder.get_object('mainwindow', self.master)
         self.is_on = False
 
         self.buttonState = {1: False, 2: False, 3: False, 4: False, 5: False, 6: False}
@@ -38,6 +36,7 @@ class Pictureaffectapp:
         builder.import_variables(self, 'is_on')
         self.canvas = self.builder.get_object('Video_Canvas')
         self.label = self.builder.get_object('label1')  # ('label_video_feed')
+        self.master.mainloop()
 
     def resetButtonStates(self, buttonNo=None):
         """Resets all button states"""
@@ -110,10 +109,6 @@ class Pictureaffectapp:
             label.configure(image=show_image_off)
             label.image = show_image_off
         label.update()
-    # PIL.Image.radial_gradient(mode)[source]
-    # Generate 256x256 radial gradient from black to
-    # white, centre to edge.
-    # Parameters mode – Input mode.
 
     def affectButton4Pressed(self):
         """Rotate 90 degrees"""
@@ -159,13 +154,6 @@ class Pictureaffectapp:
             label.configure(image=show_image_off)
             label.image = show_image_off
         label.update()
-    # Rotate:
-    # from PIL import Image
-    # with Image.open("hopper.jpg") as im:
-    #     im.rotate(45).show()
-    # PIL.Image.ROTATE_90
-    # PIL.Image.ROTATE_180
-    # PIL.Image.ROTATE_270
 
     def onOffPressed(self):
         """Start and stop the video feed
@@ -173,9 +161,6 @@ class Pictureaffectapp:
         is off when the app has been quit"""
         self.buttonState[6] = not self.buttonState[6]
         label = self.builder.get_object('label1')  # ('label_video_feed')
-        # canvas = self.canvas
-
-        # ## https://www.tutorialspoint.com/how-to-update-an-image-in-a-tkinter-canvas
 
         if self.buttonState[6]:
             print('on/off is ', self.buttonState[6])
@@ -205,20 +190,12 @@ class Pictureaffectapp:
         self.is_on = False
         print(self.is_on)
         # root.quit()
-        root.destroy()
-
-    # def callback(self, event=None):
-    #     pass
-    #
-    # def run(self):
-    #     self.mainwindow.mainloop()
+        self.master.destroy()
 
 
 if __name__ == '__main__':
-    root = tk.Tk()
-    app = Pictureaffectapp(root)
-    root.mainloop()
-    Pictureaffectapp.quit(root)  # Videoaffectapp.quit()
+    app = pictureaffectapp()
+    app.quit()
 
 
 # https://stackoverflow.com/questions/68189294/how-to-display-the-video-in-tkinter-canvas-frame-by-frame
